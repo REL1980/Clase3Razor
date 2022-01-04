@@ -1,0 +1,35 @@
+@page // "/Teamss" generaría el ruteo de la página si quiero https://localhost:7193/Teamss
+
+@{
+    var teams = new List<Team>();
+    teams.Add(new Team(10,"Barcelona"));
+    teams.Add(new Team(12,"Real Madrid"));
+    teams.Add(new Team(13,"Atletico de Madrid"));
+
+}
+
+<div class="row">
+    <div class="col">
+        <table class="table">
+            <thead>             <!--encabezado-->
+                <tr>            <!-- fila-->
+                    <th scope="col"># Registro</th> <!-- columna-->
+                    <th scope="col">Nombre</th> <!-- columna-->
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    foreach (var team in teams)
+                    {
+                        <tr>
+                            <th>@team.Id</th>
+                            <td>@team.Name</td>
+                        </tr>
+                    }
+                }
+                
+                
+            </tbody>
+        </table>
+    </div>
+</div>
